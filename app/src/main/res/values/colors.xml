@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Commonly used for base blocks in application such as Action Bar background color -->
+    <color name="blue_strong">#0288D1</color>
+    <color name="blue_very_soft">#b3e5fc</color>
+    <color name="blue_vivid">#03A9F4</color>
+
+
+    <!-- Commonly used for main information elements such as action bar icons, primary texts -->
+    <color name="gray_dark_very_transparent_light">#CC333333</color>
+
+    <!-- Commonly used for main information elements such as secondary texts -->
+    <color name="gray_dark_very_transparent_semi">#88333333</color>
+
+    <!-- Commonly used for main disabled elements -->
+    <color name="gray_dark_very_transparent_very">#4C333333</color>
+
+    <!-- Commonly used for backgrounds -->
+    <color name="gray_light_very">#EBEBEB</color>
+
+    <!-- Commonly used for serving accent elements such as buttons, switchers -->
+    <color name="orange_light">#FFAB40</color>
+    <color name="orange_light_very">#FFD180</color>
+    <color name="orange_pure">#FF9100</color>
+
+    <!-- Commonly used for items, backgrounds of "front" elements or "back" elements -->
+    <color name="white_pure">#FFFFFF</color>
+
+    <!-- Commonly used for main information elements such as action bar icons, primary texts -->
+    <color name="white_transparent_light">#CCFFFFFF</color>
+
+    <!-- Commonly used for main information elements such as secondary texts -->
+    <color name="white_transparent_semi">#88FFFFFF</color>
+
+    <!-- Commonly used for main disabled elements -->
+    <color name="white_transparent_very">#4CFFFFFF</color></resources>

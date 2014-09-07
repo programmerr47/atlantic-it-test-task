@@ -1,8 +1,62 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style
+        name="AppTheme"
+        parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:actionBarStyle">@style/AtlanticActionBar</item>
+        <item name="android:actionBarTabTextStyle">@style/AtlanticActionBarTabText</item>
+        <item name="android:actionMenuTextColor">@color/orange_pure</item>
+
+        <item name="actionBarStyle">@style/AtlanticActionBar</item>
+        <item name="actionBarTabTextStyle">@style/AtlanticActionBarTabText</item>
+        <item name="actionMenuTextColor">@color/orange_pure</item>
+
+    </style>
+
+    <style
+        name="AtlanticActionBar"
+        parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+
+        <item name="android:background">@color/blue_vivid</item>
+        <item name="android:titleTextStyle">@style/AtlanticActionBarTitleText</item>
+
+        <item name="background">@color/blue_vivid</item>
+        <item name="titleTextStyle">@style/AtlanticActionBarTitleText</item>
+
+    </style>
+
+    <style
+        name="AtlanticActionBarTitleText"
+        parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white_transparent_light</item>
+    </style>
+
+    <style
+        name="AtlanticActionBarTabText"
+        parent="Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/white_transparent_light</item>
+    </style>
+
+    <style
+        name="AtlanticTextHuge">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style
+        name="AtlanticTextLarge">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style
+        name="AtlanticTextMedium">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style
+        name="AtlanticTextSmall">
+        <item name="android:textSize">14sp</item>
     </style>
 
 </resources>
