@@ -75,23 +75,64 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/element_icon_size"
+            android:layout_height="@dimen/element_icon_size"
+            android:layout_marginRight="@dimen/margin_default"
+            android:src="@drawable/ic_sum_result"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_default"
+            android:layout_gravity="center"
+            android:text="@string/SUM_RESULT"
+            android:textColor="@color/gray_dark_very_transparent_light"
+            style="@style/AtlanticTextMedium"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/margin_default"
         android:gravity="center"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+        <FrameLayout
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:layout_marginBottom="@dimen/margin_default"
             android:background="@drawable/round_button">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="10000"
+                android:singleLine="true"
+                android:textColor="@color/white_transparent_light"
+                android:textSize="48sp"/>
 
-        </LinearLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_up"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Push the button and wait for answer"/>
+            android:text="@string/PUSH_BUTTON_HINT"
+            android:gravity="center"
+            android:textColor="@color/gray_dark_very_transparent_semi"/>
 
     </LinearLayout>
 

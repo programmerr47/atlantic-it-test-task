@@ -7,6 +7,6 @@
         android:drawable="@drawable/round_button_selected"/>
 
     <item
-        android:drawable="@drawable/round_button"/>
+        android:drawable="@drawable/round_button_default"/>
 
 </selector>
