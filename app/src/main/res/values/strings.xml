@@ -3,11 +3,14 @@
 
     <string name="app_name">atlantic-it-test-task</string>
 
+    <string name="CHECK_YOUR_NUMBERS">Check your numbers</string>
     <string name="FIRST">First</string>
+    <string name="PREVIOUS_SUM_RESULT">Previous result is %1$s</string>
     <string name="PUSH_BUTTON_HINT">Push the button\nand\nwait for answer</string>
     <string name="SECOND">Second</string>
     <string name="SUM_RESULT">Result is %1$s</string>
     <string name="TIMER_DELAY">Timer delay (sec.)</string>
     <string name="TYPE_NUMBERS">Type two numbers</string>
+    <string name="WRONG_RESULT">Oops! Something went wrong! Wrong sum result</string>
 
 </resources>
