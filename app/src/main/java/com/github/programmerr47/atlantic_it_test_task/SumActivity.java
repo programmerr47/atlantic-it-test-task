@@ -12,7 +12,10 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 
-
+/**
+ * @author Michael Spitsin
+ * @since 2014-09-06
+ */
 public class SumActivity extends ActionBarActivity {
 
     @Override
@@ -21,24 +24,9 @@ public class SumActivity extends ActionBarActivity {
         setContentView(R.layout.activity_sum);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new SumFragment())
                     .commit();
         }
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_sum, container, false);
-            return rootView;
-        }
-    }
 }
