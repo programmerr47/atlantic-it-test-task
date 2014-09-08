@@ -27,24 +27,24 @@
         android:layout_marginTop="@dimen/margin_default"
         android:orientation="horizontal">
 
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        <EditText
             android:id="@+id/firstNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            res:fletFloatingHint="@string/FIRST"
-            res:fletTextColor="@color/gray_dark_very_transparent_light"
-            res:fletInputType="number"
+            android:hint="@string/FIRST"
+            android:textColor="@color/gray_dark_very_transparent_light"
+            android:inputType="number"
             style="@style/AtlanticTextMedium"/>
 
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        <EditText
             android:id="@+id/secondNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            res:fletFloatingHint="@string/SECOND"
-            res:fletTextColor="@color/gray_dark_very_transparent_light"
-            res:fletInputType="number"
+            android:hint="@string/SECOND"
+            android:textColor="@color/gray_dark_very_transparent_light"
+            android:inputType="number"
             style="@style/AtlanticTextMedium"/>
 
     </LinearLayout>
@@ -61,16 +61,16 @@
             android:layout_marginRight="@dimen/margin_default"
             android:src="@drawable/ic_set_timer"/>
 
-        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        <EditText
             android:id="@+id/timerDelayEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/margin_default"
             android:layout_weight="1"
-            res:fletFloatingHint="@string/TIMER_DELAY"
-            res:fletTextColor="@color/gray_dark_very_transparent_light"
-            res:fletInputType="number"
+            android:hint="@string/TIMER_DELAY"
+            android:textColor="@color/gray_dark_very_transparent_light"
+            android:inputType="number"
             style="@style/AtlanticTextMedium"/>
 
     </LinearLayout>

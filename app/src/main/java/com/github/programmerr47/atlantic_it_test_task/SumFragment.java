@@ -12,10 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.wrapp.floatlabelededittext.FloatLabeledEditText;
 
 /**
  * @author Michael Spitsin
@@ -25,9 +24,9 @@ public class SumFragment extends Fragment implements View.OnClickListener {
 
     private static final String UNKNOWN_PREVIOUS_RESULT = "?";
 
-    private FloatLabeledEditText mFirstNumberEditText;
-    private FloatLabeledEditText mSecondNumberEditText;
-    private FloatLabeledEditText mTimerDelayEditText;
+    private EditText mFirstNumberEditText;
+    private EditText mSecondNumberEditText;
+    private EditText mTimerDelayEditText;
     private TextView mSumResultTextView;
     private Button mStartCounterButton;
 
@@ -47,9 +46,9 @@ public class SumFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        mFirstNumberEditText = (FloatLabeledEditText) view.findViewById(R.id.firstNumberEditText);
-        mSecondNumberEditText = (FloatLabeledEditText) view.findViewById(R.id.secondNumberEditText);
-        mTimerDelayEditText = (FloatLabeledEditText) view.findViewById(R.id.timerDelayEditText);
+        mFirstNumberEditText = (EditText) view.findViewById(R.id.firstNumberEditText);
+        mSecondNumberEditText = (EditText) view.findViewById(R.id.secondNumberEditText);
+        mTimerDelayEditText = (EditText) view.findViewById(R.id.timerDelayEditText);
         mSumResultTextView = (TextView) view.findViewById(R.id.sumResultTextView);
         mStartCounterButton = (Button) view.findViewById(R.id.startCounterButton);
     }
@@ -85,13 +84,9 @@ public class SumFragment extends Fragment implements View.OnClickListener {
             mSumResultTextView.setText(String.format(getActivity().getString(R.string.PREVIOUS_SUM_RESULT), UNKNOWN_PREVIOUS_RESULT));
         }
 
-        if (mLocalSettings.isStillCounting()) {
-            mStartCounterButton.setEnabled(false);
-        } else {
-            mStartCounterButton.setEnabled(true);
-        }
+        mStartCounterButton.setEnabled(true);
 
-        mFirstNumberEditText.getEditText().addTextChangedListener(new TextWatcher() {
+        mFirstNumberEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
@@ -104,7 +99,7 @@ public class SumFragment extends Fragment implements View.OnClickListener {
             public void afterTextChanged(Editable s) {}
         });
 
-        mSecondNumberEditText.getEditText().addTextChangedListener(new TextWatcher() {
+        mSecondNumberEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
@@ -117,7 +112,7 @@ public class SumFragment extends Fragment implements View.OnClickListener {
             public void afterTextChanged(Editable s) {}
         });
 
-        mTimerDelayEditText.getEditText().addTextChangedListener(new TextWatcher() {
+        mTimerDelayEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
@@ -159,6 +154,7 @@ public class SumFragment extends Fragment implements View.OnClickListener {
         if (v.getId() == R.id.startCounterButton) {
             if (mLocalSettings.isCorrect()) {
                 mLocalSettings.setCouting(true);
+                mStartCounterButton.setEnabled(false);
                 Intent intent = new Intent(getActivity(), SumService.class);
                 intent.putExtra(SumService.COUNTER_NUMBER, Integer.parseInt(mLocalSettings.getCounterNumber()));
                 intent.putExtra(SumService.FIRST_NUMBER, Integer.parseInt(mLocalSettings.getFirstNumber()));
@@ -175,9 +171,9 @@ public class SumFragment extends Fragment implements View.OnClickListener {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (SumService.UPDATE_COUNTER_ACTION.equals(intent.getAction())) {
-                if (mLocalSettings.isStillCounting()) {
-                    mStartCounterButton.setText(String.valueOf(intent.getIntExtra(SumService.COUNTER_NUMBER, 0)));
-                }
+                mLocalSettings.setCouting(true);
+                mStartCounterButton.setEnabled(false);
+                mStartCounterButton.setText(String.valueOf(intent.getIntExtra(SumService.COUNTER_NUMBER, 0)));
             } else if (SumService.FINISHED_COUNTING.equals(intent.getAction())) {
                 int sumResult = intent.getIntExtra(SumService.RESULT_NUMBER, -1);
 
